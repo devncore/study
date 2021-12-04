@@ -29,29 +29,57 @@ namespace MethodChaining
 
         private void SampleMethod()
         {
+            List<int> cnts = new List<int>();
+
+            cnts.Add(2);
+            cnts.Add(3);
+            cnts.Add(5);
+            cnts.Add(6);
+
+            List<int> getCnt = new List<int>();
+
+            foreach (var row in cnts)
+            {
+                var a = row * 2;
+
+                if (a == 4)
+                {
+                    continue;
+                }
+
+                getCnt.Add(a);
+            }
+
+            var getList = getCnt.OrderByDescending(x => x).ToArray();
+
+
             int[] nums = { 2, 3, 5, 6 };
-            int[] result = new int[4];
+            int[] values = new int[4];
             int i = 0;
 
             foreach (var row in nums)
             {
-                int var1 = row * 2;
-                if (var1 != 4)
+                int val = row * 2;
+
+                if (val == 0)
                 {
-                    result[i] = var1;
+                    continue;
+                }
+
+                if (val != 4)
+                {
+                    values[i] = val;
                     i++;
                 }
             }
 
-            var getNum = result.OrderByDescending(x => x);
-
+            var getNum = values.OrderByDescending(x => x);
 
             int[] numbers = { 2, 3, 5, 6 };
 
             var getValue = numbers.Select(x => x * 2)
                                   .Where(x => x != 4)
                                   .OrderByDescending(x => x);
-
         }
     }
 }
