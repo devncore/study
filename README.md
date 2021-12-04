@@ -20,4 +20,11 @@ OAuth 2.0 클라이언트 ID 인증키 받는방법
 
 - [ ] Google 로그인 연동 방법정리 및 구조파악 https://github.com/devncore/blazor-authentication 
 - [ ] API Method 생성하기 
+
 - [ ] DB Schema 활용하기
+Database Schema 란?
+- 데이터베이스 개체에 대한 네임스페이스
+- 스키마의 기본값은 dbo
+- DB에 존재하는 스키마 정보 조회, 해당하는 테이블의 스키마 조회 가능
+- 스키마를 생성하고 생성한 스키마를 UserId에 맵핑하여 사용
+- 유저에 스키마가 맵핑 되었다면 테이블, 프로시저 생성시 기본적으로 맵핑된 스키마로 생성됨
