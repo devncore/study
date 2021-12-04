@@ -29,13 +29,28 @@ namespace MethodChaining
 
         private void SampleMethod()
         {
+            int[] nums = { 2, 3, 5, 6 };
+            int[] result = new int[4];
+            int i = 0;
+
+            foreach (var row in nums)
+            {
+                int var1 = row * 2;
+                if (var1 != 4)
+                {
+                    result[i] = var1;
+                    i++;
+                }
+            }
+
+            var getNum = result.OrderByDescending(x => x);
+
 
             int[] numbers = { 2, 3, 5, 6 };
 
             var getValue = numbers.Select(x => x * 2)
                                   .Where(x => x != 4)
-                                  .OrderBy(x => x);
-
+                                  .OrderByDescending(x => x);
 
         }
     }
