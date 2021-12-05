@@ -7,6 +7,7 @@
 - [ ] DB Schema 활용하기
 - [ ] Blazor Injecttion 
 - [ ] React-Router-Dom
+- [ ] Scaffold
 
 
 ### Method Chaining 메소드 체이닝이란?
