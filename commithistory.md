@@ -88,3 +88,46 @@ public class CommitHistory
     }
 }
 ```
+
+local/CsvBuilder.cs
+
+```
+public class CsvBuilder
+{
+public static CsvBuilder Instance = null;
+
+private CsvBuilder()
+{
+
+}
+
+static CsvBuilder()
+{
+    Instance = new CsvBuilder();
+}
+
+public List<CommitHistory> LoadCsv()
+{
+    using (var reader = new StreamReader(@"logs/history.csv))
+{
+    List<CommitHistory> source = new List<commitHistory>();
+while (!reader.EndOfStream)
+{
+var line = reader.ReadLine();
+source.Add(new CommitHistory(line);
+}
+return source;
+}
+}
+}
+```
+
+IgnoreWordsExtension
+
+```
+IgnoreWordsExtension
+
+AddSwitchEvent Action<IgnoreItem>
+Use(this list text)
+{}
+```
