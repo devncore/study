@@ -62,3 +62,29 @@ public class MainViewModel : ObservableObject
     }
 }
 ```
+
+data/CommitHistory.cs
+```
+public class CommitHistory
+{
+    public string CommitId { get; set; }
+    public string CommitName { get; set; }
+    public DateTime? CommitDate { get; set; }
+    public string CommitComment { get; set; }
+    
+    private string? GetLastAttach(string line, int y)
+    {
+        int index = 0;
+        string text = "";
+        foreach (var t in line.Split(','))
+        {
+            if (index > 2)
+            {
+                text += t;
+            }
+            index++;
+        }
+        return text.TrimEnd('\'');
+    }
+}
+```
